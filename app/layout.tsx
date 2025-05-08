@@ -1,19 +1,17 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-
-const inter = Inter({ subsets: ["latin"] })
+import type React from "react";
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Baruc ",
-  description: "Olvida las implementaciones lentas BARUC pone tu voz de marca en WhatsApp al instante",
-}
+  title: "Baruc",
+  description:
+    "Olvida las implementaciones lentas BARUC pone tu voz de marca en WhatsApp al instante",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" className="dark">
@@ -22,5 +20,5 @@ export default function RootLayout({
         {children}
       </body>
     </html>
-  )
+  );
 }
