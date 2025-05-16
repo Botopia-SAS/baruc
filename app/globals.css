@@ -5,12 +5,12 @@
   --foreground: #171717;
 
   /* Colores para la landing de Huly */
-  --halo-color-1: rgba(255, 227, 165, 1);
-  --halo-color-2: rgba(255, 144, 10, 1);
+  --halo-color-1: rgba(120, 120, 255, 0.3);
+  --halo-color-2: rgba(90, 90, 255, 0.2);
   --glow-color-1: rgba(255, 120, 0, 0.7);
   --glow-color-2: rgba(255, 0, 100, 0.7);
-  --card-bg: rgb(22, 13, 7);
-  --card-border: rgba(130, 57, 12, 1);
+  --card-bg: rgba(20, 20, 20, 0.7);
+  --card-border: rgba(255, 255, 255, 0.1);
 }
 
 @theme inline {
@@ -66,12 +66,35 @@ body {
     circle at center,
     var(--halo-color-1) 0%,
     var(--halo-color-2) 60%,
-    transparent 200%
+    transparent 100%
   );
   filter: blur(80px);
 }
 
 
+
+/* Animaciones */
+@keyframes glowPulse {
+  0%, 100% {
+    filter: blur(100px);
+    opacity: 0.8;
+  }
+  50% {
+    filter: blur(140px);
+    opacity: 1;
+  }
+}
+
+@keyframes beamFlicker {
+  0%, 100% {
+    opacity: 0.5;
+    width: 4px;
+  }
+  50% {
+    opacity: 0.8;
+    width: 6px;
+  }
+}
 /*  ---- Utilities 3D ---- */
 .perspective-800 {
   perspective: 800px;
