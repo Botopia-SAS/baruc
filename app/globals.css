@@ -5,12 +5,12 @@
   --foreground: #171717;
 
   /* Colores para la landing de Huly */
-  --halo-color-1: rgba(120, 120, 255, 0.3);
-  --halo-color-2: rgba(90, 90, 255, 0.2);
+  --halo-color-1: rgba(255, 227, 165, 1);
+  --halo-color-2: rgba(255, 144, 10, 1);
   --glow-color-1: rgba(255, 120, 0, 0.7);
   --glow-color-2: rgba(255, 0, 100, 0.7);
-  --card-bg: rgba(20, 20, 20, 0.7);
-  --card-border: rgba(255, 255, 255, 0.1);
+  --card-bg: rgb(22, 13, 7);
+  --card-border: rgba(130, 57, 12, 1);
 }
 
 @theme inline {
@@ -66,92 +66,12 @@ body {
     circle at center,
     var(--halo-color-1) 0%,
     var(--halo-color-2) 60%,
-    transparent 100%
+    transparent 200%
   );
   filter: blur(80px);
 }
 
-/*  ─── Caña estrecha ─── */
-.halo-effect::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.9) 0%,
-    rgba(255,255,255,0.1) 80%
-  );
-  filter: blur(4px);
-}
 
-/*  ─── Flare grueso en la base ─── */
-.halo-effect::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;      /* ancho del flare */
-  height: 200px;    /* altura del flare */
-  background: radial-gradient(
-    circle at top center,
-    rgba(255,255,255,1) 0%,
-    rgba(255,255,255,0) 100%
-  );
-  filter: blur(20px);
-  opacity: 0.7;
-}
-
-
-@keyframes beamFall {
-  0% {
-    background-position-y: -100%;  /* empieza fuera de la vista, arriba */
-    width: 4px;
-    opacity: 0;
-  }
-  25% {
-    width: 4px;
-    opacity: 0.5;
-  }
-  50% {
-    background-position-y: 50%;    /* mitad del recorrido */
-    width: 6px;
-    opacity: 1;
-  }
-  100% {
-    background-position-y: 200%;   /* fuera de la vista, abajo */
-    width: 8px;                    /* más grueso al terminar */
-    opacity: 1;
-  }
-}
-
-
-/* Animaciones */
-@keyframes glowPulse {
-  0%, 100% {
-    filter: blur(100px);
-    opacity: 0.8;
-  }
-  50% {
-    filter: blur(140px);
-    opacity: 1;
-  }
-}
-
-@keyframes beamFlicker {
-  0%, 100% {
-    opacity: 0.5;
-    width: 4px;
-  }
-  50% {
-    opacity: 0.8;
-    width: 6px;
-  }
-}
 /*  ---- Utilities 3D ---- */
 .perspective-800 {
   perspective: 800px;
