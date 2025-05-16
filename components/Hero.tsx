@@ -15,7 +15,7 @@ export default function Hero() {
           </p>
           <a
             href="https://app.botopia.online/login"
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-pink-600 rounded-full text-white font-medium glow-effect"
+            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#6d00ab] to-[#4b2fd3] rounded-full text-white font-semibold text-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
           >
             PRUEBA GRATIS
             <ArrowRight className="ml-2 h-5 w-5" />
