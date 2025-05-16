@@ -23,6 +23,24 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+  /* globals.css (o tu CSS global) */
+@keyframes swirl {
+  to { transform: rotate(360deg); }
+}
+
+.bg-swirl {
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    rgba(255,227,165,0.4),
+    rgba(130,57,12,0.4),
+    rgba(255,227,165,0.4)
+  );
+  filter: blur(120px);
+  animation: swirl 60s linear infinite;
+  z-index: -1;
+}
 }
 
 body {
