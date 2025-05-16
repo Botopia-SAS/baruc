@@ -24,12 +24,13 @@ export default function Hero() {
         <div className="md:w-5/12 flex justify-end">
           <div
             className="
-              relative 
-              perspective-800 transform-gpu 
-              translate-x-8 md:translate-x-16 
-              transition-transform duration-700 ease-out 
-              group-hover:translate-x-12 md:group-hover:translate-x-20
-            "
+      relative 
+      perspective-800 transform-gpu 
+    scale-75 md:scale-100          
+     translate-x-8 md:translate-x-16 
+      transition-transform duration-700 ease-out 
+      group-hover:translate-x-12 md:group-hover:translate-x-20
+    "
           >
             <PhoneMock />
           </div>

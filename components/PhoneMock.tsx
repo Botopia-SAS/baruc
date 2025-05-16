@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function PhoneMock() {
   return (
-    <div className="phone-mock relative w-full max-w-sm perspective-800">
+    <div className="phone-mock relative w-full max-w-xs md:max-w-sm perspective-800">
       {/* La imagen original, sin tocar */}
       <Image
         src="/wha.png"
