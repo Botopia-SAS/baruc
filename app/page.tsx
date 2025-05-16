@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Demo from "../components/Demo/page";
 import Ventajas from "../components/Ventajas/page";
+import Movimiento from "../components/Movimiento/page";
 import Pricing from "../components/Pricing/page";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <Demo />
       <Ventajas />
       <Pricing />
+      <Movimiento />
     </main>
   );
 }
