@@ -34,21 +34,15 @@ export default function Navbar() {
 
       {/* Buttons */}
       <div className="flex items-center space-x-4 flex-shrink-0">
+        
         <Link
-          href="/star"
-          className="flex items-center text-white/80 hover:text-white transition"
-        >
-          <Star className="h-5 w-5 mr-2" />
-          <span>Star Us</span>
-        </Link>
-        <Link
-          href="/signin"
+          href="https://app.botopia.online/login"
           className="px-4 py-2 border border-white/20 rounded-full text-white/80 hover:text-white hover:border-white/40 transition"
         >
           SIGN IN
         </Link>
         <Link
-          href="/get-started"
+          href="https://app.botopia.online/register"
           className="px-4 py-2 bg-white text-black rounded-full font-medium hover:bg-white/90 transition"
         >
           GET STARTED
