@@ -1,7 +1,6 @@
 // components/Navbar.tsx
 import Image from "next/image";
 import Link from "next/link";
-import { Star } from "lucide-react";
 
 export default function Navbar() {
   return (
