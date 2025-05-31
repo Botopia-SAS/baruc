@@ -84,7 +84,7 @@ export default function Ventajas() {
   }, [icons]);
 
   return (
-    <section className="relative py-20">
+    <section id="ventajas" className="relative py-20">
       {/* remolino de fondo */}
       <div className="bg-swirl absolute inset-0" />
 

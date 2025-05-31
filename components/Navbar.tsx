@@ -21,15 +21,18 @@ export default function Navbar() {
 
       {/* Navigation (centered) */}
       <nav className="hidden md:flex space-x-8 justify-center flex-1">
-        {["pricing", "resources", "community"].map((path) => (
-          <Link
-            key={path}
-            href={`/${path}`}
-            className="text-white/80 hover:text-white transition"
-          >
-            {path.charAt(0).toUpperCase() + path.slice(1)}
-          </Link>
-        ))}
+        <Link
+          href="#pricing"
+          className="text-white/80 hover:text-white transition"
+        >
+          Precios
+        </Link>
+        <Link
+          href="#ventajas"
+          className="text-white/80 hover:text-white transition"
+        >
+          Ventajas
+        </Link>
       </nav>
 
       {/* Buttons */}
@@ -42,7 +45,7 @@ export default function Navbar() {
           SIGN IN
         </Link>
         <Link
-          href="https://app.botopia.online/register"
+          href="https://app.botopia.online/login"  // cambiado de /register a /login
           className="px-4 py-2 bg-white text-black rounded-full font-medium hover:bg-white/90 transition"
         >
           GET STARTED

@@ -2,130 +2,147 @@
 "use client";
 
 import React from "react";
-import { ArrowRight } from "lucide-react";
 
-// Paleta Moody Blue aplicada a cada plan
+// Defino los planes con colores planos estilo las imágenes
 const plans = [
-  {
-    title: "PLAN BASIC",
-    price: "49",
-    gradientFrom: "#DEE3FF", // suave azul claro
-    gradientTo: "#C4CBFF",   // tono medio claro
-    textColor: "#F1F3FF",    // texto oscuro
-    features: [
-      "Puedes vincular hasta 1 número de teléfono",
-      "Puedes crear y tener hasta 1 flujo activo",
-      "Tu agente podrá personalizarse con un prompt",
-      "Todos los modelos disponibles",
-      "10.000 créditos gratis",
-      "Precio del crédito: 0,00009",
-    ],
-  },
-  {
-    title: "PLAN PRO",
-    price: "149",
-    gradientFrom: "#675BF9", // violeta vibrante
-    gradientTo: "#573DEE",   // azul profundo
-    textColor: "#F1F3FF",    // texto claro
-    highlighted: true,
-    features: [
-      "Puedes vincular hasta 3 números de teléfono",
-      "Puedes crear infinitos flujos y tener hasta 5 flujos activos",
-      "Tu agente podrá personalizarse con un prompt",
-      "Todos los modelos disponibles",
-      "100.000 créditos gratis",
-      "Precio del crédito: 0,00005",
-    ],
-  },
-  {
-    title: "PLAN PREMIUM",
-    price: "409",
-    gradientFrom: "#4B2FD3", // azul púrpura
-    gradientTo: "#3D29AA",   // púrpura oscuro
-    textColor: "#F1F3FF",    // texto claro
-    features: [
-      "Puedes vincular infinitos números de teléfono",
-      "Puedes crear y tener hasta 50 flujos activos",
-      "Tu agente podrá personalizarse con un prompt",
-      "Todos los modelos disponibles",
-      "1.000.000 créditos gratis",
-      "Precio del crédito: 0,00003",
-    ],
-  },
+	{
+		title: "PLAN GRATUITO",
+		description: "Ideal para experimentar la IA",
+		price: "0,00",
+		unit: "USD / mes",
+		limit: "Límite de 50 mensajes al mes",
+		features: [
+			"1 número de teléfono",
+			"1 flujo",
+			"Sin agentes",
+			"Respuesta en 20-30 segundos",
+		],
+		bg: "bg-blue-50",
+		text: "text-green-600",
+		btn: "bg-white text-green-600 hover:bg-gray-100",
+	},
+	{
+		title: "PLAN BÁSICO",
+		description: "Para equipos pequeños y profesionales individuales",
+		price: "14,00",
+		unit: "USD / mes",
+		limit: "Límite de 1000 mensajes al mes",
+		features: [
+			"2 números de teléfono",
+			"1 flujo",
+			"2 agentes",
+			"Respuesta entre 10-20 segundos",
+			"Soporte por email",
+		],
+		bg: "bg-yellow-50",
+		text: "text-gray-900",
+		btn: "bg-white text-gray-900 hover:bg-gray-200",
+	},
+	{
+		title: "PLAN PRO",
+		description: "Para compañías que quieren escalar y crecer",
+		price: "79,00",
+		unit: "USD / mes",
+		limit: "Límite de 5000 mensajes al mes",
+		features: [
+			"5 números de teléfono",
+			"20 flujos",
+			"10 agentes",
+			"Respuesta entre 7-15 segundos",
+			"Catálogo de modelos AI incompleto",
+			"Responde grupos de WhatsApp",
+			"Soporte por email y WhatsApp",
+		],
+		badge: "Popular ⚡",
+		bg: "bg-purple-50",
+		text: "text-gray-900",
+		btn: "bg-white text-gray-900 hover:bg-gray-200",
+	},
+	{
+		title: "PLAN INDUSTRIAL",
+		description: "Para compañías que realmente desean usar IA",
+		price: "549,00",
+		unit: "USD / mes",
+		limit: "Límite de 10.000 mensajes al mes",
+		features: [
+			"20 números de teléfono",
+			"20 flujos",
+			"50 agentes",
+			"Catálogo de modelos AI completo",
+			"Soporte 1-1 con el equipo entero",
+			"Ingeniero de cuenta dedicado",
+			"Respuesta entre 2-7 segundos",
+			"Integra pagos dentro de WhatsApp",
+		],
+		bg: "bg-yellow-100",
+		text: "text-gray-900",
+		btn: "bg-white text-gray-900 hover:bg-gray-200",
+	},
 ];
 
-// Componente para cada tarjeta usando gradiente
 function PlanCard({
-  title,
-  price,
-  features,
-  gradientFrom,
-  gradientTo,
-  textColor,
-  highlighted = false,
+	title,
+	description,
+	price,
+	unit,
+	limit,
+	features,
+	badge,
 }: {
-  title: string;
-  price: string;
-  features: string[];
-  gradientFrom: string;
-  gradientTo: string;
-  textColor: string;
-  highlighted?: boolean;
+	title: string;
+	description?: string;
+	price: string;
+	unit: string;
+	limit: string;
+	features: string[];
+	badge?: string;
 }) {
-  return (
-    <div
-      className={`
-        flex flex-col justify-between rounded-2xl p-6 shadow-lg
-        bg-gradient-to-br from-[${gradientFrom}] to-[${gradientTo}]
-        transition-transform
-        ${highlighted ? "scale-105 ring-4 ring-[#F1F3FF]" : "hover:scale-[1.02]"}
-      `}
-      style={{ color: textColor }}
-    >
-      <div>
-        <h3 className="text-xl font-bold mb-4" style={{ color: textColor }}>
-          {title}
-        </h3>
-        <ul className="list-disc list-inside space-y-2 mb-6" style={{ color: textColor }}>
-          {features.map((feature) => (
-            <li key={feature}>{feature}</li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="mt-auto">
-        <p className="text-2xl font-extrabold mb-4" style={{ color: textColor }}>
-          {price} USD / MES
-        </p>
-        <button
-          className={
-            `w-full py-2 rounded-md font-medium transition-colors ` +
-            (highlighted
-              ? "bg-white text-[${gradientTo}] hover:bg-gray-100"
-              : "bg-white/90 text-[${gradientTo}] hover:bg-white")
-          }
-        >
-          Seleccionar plan
-        </button>
-      </div>
-    </div>
-  );
+	return (
+		<div className="bg-transparent border border-white rounded-2xl p-4 shadow-md flex flex-col justify-between">
+			<div className="relative">
+				{badge && (
+					<span className="absolute top-3 right-3 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase shadow">
+						{badge}
+					</span>
+				)}
+				<h3 className="text-lg font-semibold mb-1 text-white">{title}</h3>
+				{description && (
+					<p className="text-sm mb-2 text-white/80">{description}</p>
+				)}
+				<p className="font-extrabold text-xl mb-1 text-white">
+					{price}{" "}
+					<span className="font-medium text-base text-white/80">{unit}</span>
+				</p>
+				<p className="mb-3 text-white">{limit}</p>
+			</div>
+			<ul className="list-disc list-inside space-y-1 mb-3 text-white">
+				{features.map((f) => (
+					<li key={f} className="text-sm">
+						{f}
+					</li>
+				))}
+			</ul>
+			<button className="w-full py-2 text-white border border-white rounded-md hover:bg-white/10 transition">
+				Seleccionar Plan
+			</button>
+		</div>
+	);
 }
 
 export default function PricingPage() {
-  return (
-    <section
-      id="pricing"
-      className="py-16 bg-transparent"
-    >
-      <div className="mx-auto max-w-screen-xl px-4 md:px-8 lg:px-16 text-center">
-        <h2 className="text-3xl font-bold mb-12 text-white">Métodos de pago</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {plans.map((plan) => (
-            <PlanCard key={plan.title} {...plan} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+	return (
+		<section id="pricing" className="py-12 bg-transparent">
+			<div className="mx-auto max-w-screen-xl px-4 md:px-8 lg:px-16 text-center">
+				<h2 className="text-3xl font-bold mb-8 text-white">
+					Métodos de pago
+				</h2>
+				{/* dos tarjetas por fila en móvil, cuatro en desktop */}
+				<div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+					{plans.map((plan) => (
+						<PlanCard key={plan.title} {...plan} />
+					))}
+				</div>
+			</div>
+		</section>
+	);
 }
